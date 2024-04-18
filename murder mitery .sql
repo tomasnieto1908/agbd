@@ -73,4 +73,8 @@ WHERE event_name = "SQL Symphony Concert" and car_make = "Tesla" and car_model =
 group by person_id
 having veces = 3;
 
+select * from facebook_event_checkin f JOIN person p
+on f.person_id = p.id
+where id = 99716
+
 
