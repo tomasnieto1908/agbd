@@ -5,8 +5,10 @@
 join departments d on t.department_id = d.department_id
 join locations l on d.location_id = l.location_id
 
-3-SELECT e.first_name as empleados, m.first_name as jefes from employees e
-JOIN employees m ON e.employee_id = m.manager_id
-ORDER BY m.manager_id
+3-SELECT m.first_name as jefe, e.first_name as empleado from employees e
+JOIN employees m ON e.manager_id = m.employee_id
+ORDER BY jefe
 
-4-
+4-SELECT m.first_name as jefe, count(e.first_name) as empleado from employees e
+JOIN employees m ON e.manager_id = m.employee_id group by jefe
+ORDER BY jefe
