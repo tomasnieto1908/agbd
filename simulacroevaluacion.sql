@@ -12,3 +12,8 @@ group by country
 join country p on c.country_id = p.country_id 
 group by country
 ORDER by ciudad desc
+6-select DISTINCT p.country,count(city) as ciudad FROM city c
+join country p on c.country_id = p.country_id 
+group by country
+HAVING count(city) > 2
+ORDER by ciudad desc
