@@ -17,3 +17,5 @@ join country p on c.country_id = p.country_id
 group by country
 HAVING count(city) > 2
 ORDER by ciudad desc
+7-select DISTINCT title , last_update FROM film
+ORDER by last_update desc
