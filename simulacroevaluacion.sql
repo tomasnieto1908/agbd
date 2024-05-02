@@ -17,5 +17,9 @@ join country p on c.country_id = p.country_id
 group by country
 HAVING count(city) > 2
 ORDER by ciudad desc
-7-select DISTINCT title , last_update FROM film
-ORDER by last_update desc
+7-select  min(return_date) AS antigua, max(return_date) AS nueva FROM rental
+8-SELECT p.title, COUNT(f.actor_id) as actores  FROM film_actor f
+JOIN film p ON f.film_id = p.film_id
+GROUP by f.actor_id
+ORDER by  actores DESC
+LIMIT 10
