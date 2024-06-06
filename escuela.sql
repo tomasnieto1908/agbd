@@ -63,3 +63,9 @@ WHERE profesor_id = "3"
 
 UPDATE asignacion set materia_id = (SELECT materia_id FROM materias WHERE nombre like "diseño de software")
 WHERE materia_id is NULL
+
+UPDATE asignacion SET profesor_id = 11
+WHERE materia_id = (SELECT materia_id FROM materias WHERE nombre LIKE "Administracion y gestion de base de datos") AND profesor_id = (SELECT profesor_id FROM profesores WHERE apellido like "Navarro")
+
+UPDATE asignacion SET profesor_id = 10
+WHERE (SELECT curso FROM division WHERE curso like "B") AND (SELECT apellido FROM profesor WHERE apellido like "Albornoz")
